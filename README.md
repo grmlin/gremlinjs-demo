@@ -1,4 +1,4 @@
-gremlinjs-demo
+GremlinJS Demos
 ==============
 
-GremlinJS Demos
+Visit http://grmlin.github.io/gremlinjs-demo/
