@@ -22,12 +22,11 @@
     </div>
     <div class="row">
         <div class="sidebar span2">
-
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
                     data-gremlin-name="Navigation"
                     data-src="nav.json"
-                    data-current="index.html"></ul>
+                    data-current="autoload.html"></ul>
             </div>
         </div>
         <div class="demo-content span10">
@@ -40,26 +39,28 @@
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/header&gt;
 </pre>
-            <h4>2. Add a gremlin element to your HTML</h4>
+            <div data-gremlin-name="GremlinBuilder">
+                <h4>2. Add some HTML with gremlins in it to your HTML</h4>
 
+                <p>
+                    GremlinJS will detect new dom elements with a <code>data-gremlin-name</code> attribute, and
+                    intantiates the <code>HelloWorld</code> gremlin from the basic example.
+                </p>
+                <p>
+                    This is what happens, if the button below is clicked:
+                </p>
 <pre class="prettyprint linenums">
-&lt;div data-gremlin-name=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
+    var el = document.createElement('div');
+    el.setAttribute('data-gremlin-name',"HelloWorld");
+    this.$pool.append(el);
 </pre>
-            <h3>Javascript <a href="js/gremlins/HelloWorld.js"><span class="badge badge-info">HelloWorld.js</span></a>
-            </h3>
+                <p><a class="add-gremlin btn btn-primary btn-large" href="#"><i class="icon-plus icon-white"></i> Add new <strong>HelloWorld</strong> gremlin</a>
+                </p>
+                <hr>
+                <h3>Result</h3>
 
-            <p></p>
-<pre class="prettyprint linenums">
-GremlinJS.define('HelloWorld', {
-    initialize: function () {
-       this.el.innerHTML = '&lt;p&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;/p&gt;'
-    }
-});
-</pre>
-            <hr>
-            <h3>Result</h3>
-
-            <div data-gremlin-name="HelloWorld"></div>
+                <div class="gremlins"></div>
+            </div>
 
         </div>
     </div>
@@ -67,6 +68,7 @@ GremlinJS.define('HelloWorld', {
 
 <script src="js/GremlinJS.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
+<script src="js/gremlins/GremlinBuilder.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>
 
 
