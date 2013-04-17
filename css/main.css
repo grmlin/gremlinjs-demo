@@ -7,6 +7,10 @@
     margin-left: -15px;
 }
 
+.demo-content {
+    padding-bottom: 80px;
+}
+
 .demo-content h4 {
     font-weight: bold;
 }
@@ -21,6 +25,16 @@
     margin-bottom: 20px;
 }
 
+.sample-gremlins.lazy-gremlins > div {
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 3s ease-out;
+}
+.sample-gremlins.lazy-gremlins > div + div {
+    margin-top: 400px;
+}
+
 .sample-gremlins *[data-gremlin-name],
 .sample-gremlins *[data-gremlin-found] {
     position: relative;
@@ -29,6 +43,12 @@
 
 .sample-gremlins *[data-gremlin-found] {
     background: rgba(0,170,255, 0.3);
+}
+.sample-gremlins *[data-gremlin-found].gremlin-loading {
+    background: rgba(0,170,255, 0);
+}
+.sample-gremlins.lazy-gremlins *[data-gremlin-found].gremlin-ready {
+    background: rgba(0,170,255, 0.9);
 }
 
 .sample-gremlins *[data-gremlin-found]::before {

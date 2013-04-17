@@ -22,7 +22,6 @@
     </div>
     <div class="row">
         <div class="sidebar span2">
-
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
                     data-gremlin-name="Navigation"
@@ -30,39 +29,45 @@
                     data-current="lazyload.html"></ul>
             </div>
         </div>
-        <div class="demo-content span10">
+        <div class="demo-content span9">
+            <p class="lead">
+                With GremlinJS it's easy to process your javascript only if it's visible.
+            </p>
+
+            <p>Think of all those fancy loading images when you scroll them into the viewport. GremlinJS does that, too,
+                but with Javascript(s)!</p>
+
+            <h3>Sample</h3>
+
+            <p>Scroll down the site to see the gremlins appear. (best seen in the elements explorer of the browsers
+                developer tools)</p>
+
+            <div class="sample-gremlins lazy-gremlins">
+                <div data-gremlin-name="HelloWorld"></div>
+                <div data-gremlin-name="HelloWorld" data-gremlin-lazy="true"></div>
+                <div data-gremlin-name="HelloWorld" data-gremlin-lazy="true"></div>
+            </div>
+            <hr>
             <h3>HTML</h3>
             <h4>1. Include GremlinJS and the gremlin defintions</h4>
 <pre class="prettyprint linenums">
-&lt;header&gt;
+&lt;head&gt;
     ...
     &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
-&lt;/header&gt;
+&lt;/head&gt;
 </pre>
-            <div data-gremlin-name="GremlinBuilder">
-                <h4>2. Add some HTML with gremlins in it to your HTML</h4>
+            <h4>2. Add a lazy gremlin element to your HTML</h4>
 
-                <p>
-                    GremlinJS will detect new dom elements with a <code>data-gremlin-name</code> attribute, and
-                    intantiates the <code>HelloWorld</code> gremlin from the basic example.
-                </p>
-                <p>
-                    This is what happens, if the button below is clicked:
-                </p>
 <pre class="prettyprint linenums">
-    var el = document.createElement('div');
-    el.setAttribute('data-gremlin-name',"HelloWorld");
-    this.$pool.append(el);
+&lt;div data-gremlin-name=&quot;HelloWorld&quot; data-gremlin-lazy=&quot;true&quot;&gt;&lt;/div&gt;
 </pre>
-                <p><a class="add-gremlin btn btn-primary btn-large" href="#"><i class="icon-plus icon-white"></i> Add new <strong>HelloWorld</strong> gremlin</a>
-                </p>
-                <hr>
-                <h3>Result</h3>
-
-                <div class="gremlins"></div>
-            </div>
-
+            <ul>
+                <li>
+                    The attribute <code>data-gremlin-lazy</code> set to <code>true</code> tells GremlinJS to instantiate
+                    this gremlin only if it's in the viewport.
+                </li>
+            </ul>
         </div>
     </div>
 </div>
