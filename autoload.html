@@ -30,6 +30,11 @@
             </div>
         </div>
         <div class="demo-content span10">
+            <p class="lead">
+                GremlinJS is intended to find and load gremlin elements automatically when they appear in the
+                dom.
+            </p>
+
             <h3>HTML</h3>
             <h4>1. Include GremlinJS and the gremlin defintions</h4>
 <pre class="prettyprint linenums">
@@ -40,21 +45,28 @@
 &lt;/header&gt;
 </pre>
             <div data-gremlin-name="GremlinBuilder">
-                <h4>2. Add some HTML with gremlins in it to your HTML</h4>
+                <h4>2. Add some HTML with gremlin element(s) in it to your HTML</h4>
 
                 <p>
-                    GremlinJS will detect new dom elements with a <code>data-gremlin-name</code> attribute, and
-                    intantiates the <code>HelloWorld</code> gremlin from the basic example.
+                    Clicking the button below will
+
+
                 </p>
-                <p>
-                    This is what happens, if the button below is clicked:
-                </p>
+                <ol>
+                    <li>create a new <code>div</code>-element</li>
+                    <li>set the attribute <code>data-gremlin-name</code> to <code>HelloWorld</code> (the gremlins used
+                        for the previous example) for this new element
+                    </li>
+                    <li>
+                        add the element to the dom
+                    </li>
+                </ol>
 <pre class="prettyprint linenums">
     var el = document.createElement('div');
     el.setAttribute('data-gremlin-name',"HelloWorld");
     this.$pool.append(el);
 </pre>
-                <p><a class="add-gremlin btn btn-primary btn-large" href="#"><i class="icon-plus icon-white"></i> Add new <strong>HelloWorld</strong> gremlin</a>
+                <p><a class="add-gremlin btn btn-primary btn-large" href="#">Add new <strong>HelloWorld</strong> gremlin</a>
                 </p>
                 <hr>
                 <h3>Result</h3>

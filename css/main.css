@@ -6,3 +6,7 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+
+.demo-content h4 {
+    font-weight: bold;
+}

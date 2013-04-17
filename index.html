@@ -31,6 +31,11 @@
             </div>
         </div>
         <div class="demo-content span10">
+            <p class="lead">
+                To create a basic HelloWorld gremlin, include the GremlinJS source and the gremlin definition(s). That's
+                it.
+            </p>
+
             <h3>HTML</h3>
             <h4>1. Include GremlinJS and the gremlin defintions</h4>
 <pre class="prettyprint linenums">
@@ -56,6 +61,29 @@ GremlinJS.define('HelloWorld', {
     }
 });
 </pre>
+
+            <ul>
+                <li>
+                    <p>
+                        <code>GremlinJS.define</code> adds a new gremlin definition. This one here is called <code>HelloWorld</code>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The <code>initialize</code> method is the constructor function called when a gremlin with the
+                        name <code>data-gremlin-name="HelloWorld"</code> was found and initialized.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <code>this.el</code> is available for every gremlin and references the gremlin's dom element.
+                        <br>
+
+                        Here, the <code>innerHTML</code> property of the gremlin's dom element will be changed to
+                        display <strong>Hello World</strong>.
+                    </p>
+                </li>
+            </ul>
             <hr>
             <h3>Result</h3>
 
