@@ -37,8 +37,13 @@
 
             <h3>Sample</h3>
 
-            <div class="sample-gremlins">
-                <div data-gremlin-name="HelloWorld"></div>
+            <div data-gremlin-name="GremlinBuilder">
+                <p>
+                    <a class="add-gremlin btn btn-primary btn-large" href="#">Add new <strong>HelloWorld</strong>
+                        gremlin</a>
+                </p>
+
+                <div class="gremlins sample-gremlins"></div>
             </div>
             <hr>
             <h3>HTML</h3>
@@ -50,34 +55,28 @@
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 </pre>
-            <div data-gremlin-name="GremlinBuilder">
-                <h4>2. Add some additional gremlin element(s) into your HTML</h4>
+            <h4>2. Add some additional gremlin element(s) into your HTML</h4>
 
-                <p>
-                    Clicking the button below will
-                </p>
-                <ol>
-                    <li>create a new <code>div</code>-element</li>
-                    <li>set the attribute <code>data-gremlin-name</code> to <code>HelloWorld</code> (the gremlins used
-                        for the previous example) for this new element
-                    </li>
-                    <li>
-                        add the element to the dom
-                    </li>
-                </ol>
-<pre class="prettyprint linenums">
-    var el = document.createElement('div');
-    el.setAttribute('data-gremlin-name',"HelloWorld");
-    this.$pool.append(el);
-</pre>
-                <p><a class="add-gremlin btn btn-primary btn-large" href="#">Add new <strong>HelloWorld</strong> gremlin</a>
-                </p>
-                <hr>
-                <h3>Result</h3>
+            <p>
+                Clicking the button above (see the <a href="js/gremlins/GremlinBuilder.js"><code>GremlinBuilder.js</code></a> for details.)
+            </p>
+            <ol>
+                <li>
+                    creates a new <code>div</code>-element
+                </li>
+                <li>
+                    sets the attribute <code>data-gremlin-name</code> to <code>HelloWorld</code> for this new element
+                </li>
+                <li>
+                    adds the element to the dom
+                </li>
+            </ol>
+            <p>When the newly created element is added to the dom, GremlinJS finds it and does what it has to.</p>
 
-                <div class="gremlins sample-gremlins"></div>
+            <div class="alert alert-info">
+                This happens automatically as soon as a new element with the <code>data-gremlin-name</code>
+                attribute shows up in the dom.
             </div>
-
         </div>
     </div>
 </div>

@@ -13,8 +13,5 @@ GremlinJS.define('GremlinBuilder', {
         var el = document.createElement('div');
         el.setAttribute('data-gremlin-name',"HelloWorld");
         this.$pool.append(el);
-        var x = 0;  //horizontal coord
-        var y = document.height; //vertical coord
-        window.scroll(x,y);
     }
 });
