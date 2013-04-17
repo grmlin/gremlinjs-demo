@@ -10,3 +10,34 @@
 .demo-content h4 {
     font-weight: bold;
 }
+
+.sample-gremlins > div {
+    background-color: rgba(0,170,255, 0);
+
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+    margin-bottom: 20px;
+}
+
+.sample-gremlins *[data-gremlin-name],
+.sample-gremlins *[data-gremlin-found] {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.sample-gremlins *[data-gremlin-found] {
+    background: rgba(0,170,255, 0.3);
+}
+
+.sample-gremlins *[data-gremlin-found]::before {
+    font-family: monospace;
+    content: '[' attr(data-gremlin-found) ']';
+    position: absolute;
+    top: -14px;
+    right: 2px;
+    font-size: 10px;
+    font-weight: bold;
+
+}

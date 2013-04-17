@@ -7,6 +7,10 @@
                 "url": "index.html"
             },
             {
+                "title": "Multiple Gremlins",
+                "url": "multiple.html"
+            },
+            {
                 "title": "Auto Loading",
                 "url": "autoload.html"
             },

@@ -27,19 +27,18 @@
                 <ul class="nav nav-list"
                     data-gremlin-name="Navigation"
                     data-src="nav.json"
-                    data-current="index.html"></ul>
+                    data-current="multiple.html"></ul>
             </div>
         </div>
         <div class="demo-content span9">
             <p class="lead">
-                To create a basic HelloWorld gremlin, include the GremlinJS source and the gremlin definition(s). That's
-                it.
+                You can have multiple gremlins using the same dom element.
             </p>
 
             <h3>Sample</h3>
 
             <div class="sample-gremlins">
-                <div data-gremlin-name="HelloWorld"></div>
+                <div data-gremlin-name="HelloWorld, Foo"></div>
             </div>
             <hr>
             <h3>HTML</h3>
@@ -49,17 +48,16 @@
     ...
     &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/gremlins/Foo.js&quot;&gt;&lt;/script&gt;
 &lt;/header&gt;
 </pre>
             <h4>2. Add a gremlin element to your HTML</h4>
 
 <pre class="prettyprint linenums">
-&lt;div data-gremlin-name=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
+&lt;div data-gremlin-name=&quot;HelloWorld, Foo&quot;&gt;&lt;/div&gt;
 </pre>
-            <h3>Javascript <a href="js/gremlins/HelloWorld.js"><span class="badge badge-info">HelloWorld.js</span></a>
-            </h3>
-
-            <p></p>
+            <h3>Javascript </h3>
+            <h4><a href="js/gremlins/HelloWorld.js"><span class="badge badge-info">HelloWorld.js</span></a></h4>
 <pre class="prettyprint linenums">
 GremlinJS.define('HelloWorld', {
     initialize: function () {
@@ -68,24 +66,36 @@ GremlinJS.define('HelloWorld', {
 });
 </pre>
 
+            <h4><a href="js/gremlins/Foo.js"><span class="badge badge-info">Foo.js</span></a></h4>
+<pre class="prettyprint linenums">
+GremlinJS.define('Foo', {
+    initialize: function () {
+        var p = document.createElement('p');
+        p.innerHTML = '<strong>Hello Foo?</strong>'
+        this.el.appendChild(p);
+    }
+});
+</pre>
             <ul>
                 <li>
                     <p>
-                        <code>GremlinJS.define</code> adds a new gremlin definition. This one here is called <code>HelloWorld</code>.
+                        <code>GremlinJS.define</code> adds a new gremlin definition. The two gremlins here are called
+                        <code>HelloWorld</code> and <code>Foo</code>.
                     </p>
                 </li>
                 <li>
                     <p>
                         The <code>initialize</code> method is the constructor function called when a gremlin with the
-                        name <code>data-gremlin-name="HelloWorld"</code> was found and initialized.
+                        name <code>data-gremlin-name="&lt;NAME&gt;"</code> was found and initialized.
                     </p>
                 </li>
                 <li>
                     <p>
                         <code>this.el</code> is available in every gremlin instance and references the gremlin's dom
                         element. <br>
-                        Here, the <code>innerHTML</code> property of the gremlin's dom element will be changed to
-                        display <strong>Hello World</strong>.
+                        Here, <code>HelloWorld</code> adds the text <strong>Hello World</strong>. <code>Foo</code>
+                        creates a new element with the text <strong>HelloFoo</strong> and appends it to the gremlin's
+                        dom element.
                     </p>
                 </li>
             </ul>
@@ -96,6 +106,7 @@ GremlinJS.define('HelloWorld', {
 <script src="js/GremlinJS.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>
+<script src="js/gremlins/Foo.js"></script>
 
 
 </body>
