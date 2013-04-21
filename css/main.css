@@ -26,13 +26,13 @@
 }
 
 .sample-gremlins.lazy-gremlins > div {
-    -webkit-transition: all 3s ease-out;
-    -moz-transition: all 3s ease-out;
-    -o-transition: all 3s ease-out;
-    transition: all 3s ease-out;
+    -webkit-transition: all 5s ease-out;
+    -moz-transition: all 5s ease-out;
+    -o-transition: all 5s ease-out;
+    transition: all 5s ease-out;
 }
 .sample-gremlins.lazy-gremlins > div + div {
-    margin-top: 400px;
+    margin-top: 600px;
 }
 
 .sample-gremlins *[data-gremlin-name],

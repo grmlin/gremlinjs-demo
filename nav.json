@@ -21,7 +21,7 @@
         ]
     },
     {
-        "header": "Extensions",
+        "header": "(build-in) Extensions",
         "items": [
             {
                 "title": "Interests (PubSub)",
