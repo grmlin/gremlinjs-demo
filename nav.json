@@ -17,6 +17,10 @@
             {
                 "title": "Lazy Loading",
                 "url": "lazyload.html"
+            },
+            {
+                "title": "Debug-Mode",
+                "url": "debug.html"
             }
         ]
     },

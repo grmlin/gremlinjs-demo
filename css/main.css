@@ -52,6 +52,13 @@
 }
 
 .sample-gremlins *[data-gremlin-found]::before {
+    position: absolute;
+    top: -6px;
+}
+
+
+/*
+.sample-gremlins *[data-gremlin-found]::before {
     font-family: monospace;
     content: '[' attr(data-gremlin-found) ']';
     position: absolute;
@@ -60,4 +67,4 @@
     font-size: 10px;
     font-weight: bold;
 
-}
+}*/
