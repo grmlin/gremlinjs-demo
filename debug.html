@@ -25,7 +25,7 @@
 
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
-                    data-gremlin-name="Navigation"
+                    data-gremlin="Navigation"
                     data-src="nav.json"
                     data-current="debug.html"></ul>
             </div>
@@ -39,8 +39,8 @@
             <h3>Sample</h3>
 
             <div class="sample-gremlins" style="padding-top: 20px;">
-                <div data-gremlin-name="HelloWorld"></div>
-                <div data-gremlin-name=""></div>
+                <div data-gremlin="HelloWorld"></div>
+                <div data-gremlin=""></div>
 
             </div>
 
@@ -50,14 +50,14 @@
 <pre class="prettyprint linenums">
 &lt;head&gt;
     ...
-    &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/gremlin.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 </pre>
             <h4>2. Add a gremlin element to your HTML</h4>
 
 <pre class="prettyprint linenums">
-&lt;div data-gremlin-name=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
+&lt;div data-gremlin=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
 </pre>
             <h3>Javascript <a href="js/gremlins/HelloWorld.js"><span class="badge badge-info">HelloWorld.js</span></a>
             </h3>
@@ -80,7 +80,7 @@ GremlinJS.define('HelloWorld', {
                 <li>
                     <p>
                         The <code>initialize</code> method is the constructor function called when a gremlin with the
-                        name <code>data-gremlin-name="HelloWorld"</code> was found and initialized.
+                        name <code>data-gremlin="HelloWorld"</code> was found and initialized.
                     </p>
                 </li>
                 <li>
@@ -96,7 +96,7 @@ GremlinJS.define('HelloWorld', {
     </div>
 </div>
 
-<script src="js/GremlinJS.min.js"></script>
+<script src="js/gremlin.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>
 

@@ -24,7 +24,7 @@
         <div class="sidebar span3">
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
-                    data-gremlin-name="Navigation"
+                    data-gremlin="Navigation"
                     data-src="nav.json"
                     data-current="autoload.html"></ul>
             </div>
@@ -37,7 +37,7 @@
 
             <h3>Sample</h3>
 
-            <div data-gremlin-name="GremlinBuilder">
+            <div data-gremlin="GremlinBuilder">
                 <p>
                     <a class="add-gremlin btn btn-primary btn-large" href="#">Add new <strong>HelloWorld</strong>
                         gremlin</a>
@@ -51,7 +51,7 @@
 <pre class="prettyprint linenums">
 &lt;head&gt;
     ...
-    &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/gremlin.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 </pre>
@@ -62,26 +62,26 @@
             </p>
             <ol>
                 <li>
-                    creates a new <code>div</code>-element
+                    creates a new <code>div</code> element
                 </li>
                 <li>
-                    sets the attribute <code>data-gremlin-name</code> to <code>HelloWorld</code> for this new element
+                    sets the attribute <code>data-gremlin</code> to <code>HelloWorld</code> for this new element
                 </li>
                 <li>
-                    adds the element to the dom
+                    appends the element to the dom
                 </li>
             </ol>
-            <p>When the newly created element is added to the dom, GremlinJS finds it and does what it has to.</p>
+            <p>When the newly created element is appended to the dom, GremlinJS finds it and does what it has to.</p>
 
             <div class="alert alert-info">
-                This happens automatically as soon as a new element with the <code>data-gremlin-name</code>
+                This happens automatically as soon as a new element with the <code>data-gremlin</code>
                 attribute shows up in the dom.
             </div>
         </div>
     </div>
 </div>
 
-<script src="js/GremlinJS.min.js"></script>
+<script src="js/gremlin.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
 <script src="js/gremlins/GremlinBuilder.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>

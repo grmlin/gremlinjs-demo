@@ -24,7 +24,7 @@
         <div class="sidebar span3">
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
-                    data-gremlin-name="Navigation"
+                    data-gremlin="Navigation"
                     data-src="nav.json"
                     data-current="lazyload.html"></ul>
             </div>
@@ -43,9 +43,9 @@
                 developer tools)</p>
 
             <div class="sample-gremlins lazy-gremlins">
-                <div data-gremlin-name="HelloWorld"></div>
-                <div data-gremlin-name="Sloth" data-gremlin-lazy="true"></div>
-                <div data-gremlin-name="Sloth" data-gremlin-lazy="true"></div>
+                <div data-gremlin="HelloWorld"></div>
+                <div data-gremlin="Sloth" data-gremlin-lazy="true"></div>
+                <div data-gremlin="Sloth" data-gremlin-lazy="true"></div>
             </div>
             <hr>
             <h3>HTML</h3>
@@ -53,14 +53,14 @@
 <pre class="prettyprint linenums">
 &lt;head&gt;
     ...
-    &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/gremlin.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 </pre>
             <h4>2. Add a lazy gremlin element to your HTML</h4>
 
 <pre class="prettyprint linenums">
-&lt;div data-gremlin-name=&quot;HelloWorld&quot; data-gremlin-lazy=&quot;true&quot;&gt;&lt;/div&gt;
+&lt;div data-gremlin=&quot;HelloWorld&quot; data-gremlin-lazy=&quot;true&quot;&gt;&lt;/div&gt;
 </pre>
             <ul>
                 <li>
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<script src="js/GremlinJS.min.js"></script>
+<script src="js/gremlin.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
 <script src="js/gremlins/GremlinBuilder.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>

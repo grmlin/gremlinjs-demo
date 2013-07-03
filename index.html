@@ -15,7 +15,7 @@
 
 <div class="container">
     <h1 class="page-header">GremlinJS
-        <small>Demos</small>
+        <small>Samples</small>
     </h1>
     <div class="row">
         <div class="span12"></div>
@@ -25,7 +25,7 @@
 
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list"
-                    data-gremlin-name="Navigation"
+                    data-gremlin="Navigation"
                     data-src="nav.json"
                     data-current="index.html"></ul>
             </div>
@@ -39,7 +39,7 @@
             <h3>Sample</h3>
 
             <div class="sample-gremlins">
-                <div data-gremlin-name="HelloWorld"></div>
+                <div data-gremlin="HelloWorld"></div>
             </div>
             <hr>
             <h3>HTML</h3>
@@ -47,25 +47,25 @@
 <pre class="prettyprint linenums">
 &lt;head&gt;
     ...
-    &lt;script src=&quot;js/GremlinJS.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/gremlin.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;js/gremlins/HelloWorld.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 </pre>
             <h4>2. Add a gremlin element to your HTML</h4>
 
 <pre class="prettyprint linenums">
-&lt;div data-gremlin-name=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
+&lt;div data-gremlin=&quot;HelloWorld&quot;&gt;&lt;/div&gt;
 </pre>
             <h3>Javascript <a href="js/gremlins/HelloWorld.js"><span class="badge badge-info">HelloWorld.js</span></a>
             </h3>
 
             <p></p>
 <pre class="prettyprint linenums">
-GremlinJS.define('HelloWorld', {
-    initialize: function () {
-       this.el.innerHTML = '<strong>Hello World</strong>'
+var HelloWorld = GremlinJS.define('HelloWorld',
+    function () {
+        this.el.innerHTML = '<strong>Hello World</strong>';
     }
-});
+);
 </pre>
 
             <ul>
@@ -76,16 +76,27 @@ GremlinJS.define('HelloWorld', {
                 </li>
                 <li>
                     <p>
-                        The <code>initialize</code> method is the constructor function called when a gremlin with the
-                        name <code>data-gremlin-name="HelloWorld"</code> was found and initialized.
-                    </p>
+                        The <code>define</code> method takes multiple arguments. In this example two of them are used:
+                    <ol>
+                        <li>
+                            <p>
+                                The gremlin's name
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The constructor function. This function is called when a gremlin with the
+                                name <code>data-gremlin="HelloWorld"</code> was found and instantiated.
+                            </p>
+                        </li>
+                    </ol>
                 </li>
                 <li>
                     <p>
                         <code>this.el</code> is available in every gremlin instance and references the gremlin's dom
                         element. <br>
-                        Here, the <code>innerHTML</code> property of the gremlin's dom element will be changed to
-                        display <strong>Hello World</strong>.
+                        Here, the <code>innerHTML</code> property of the gremlin's dom element will be changed
+                        <strong>Hello World</strong>.
                     </p>
                 </li>
             </ul>
@@ -93,7 +104,7 @@ GremlinJS.define('HelloWorld', {
     </div>
 </div>
 
-<script src="js/GremlinJS.min.js"></script>
+<script src="js/gremlin.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
 <script src="js/gremlins/HelloWorld.js"></script>
 

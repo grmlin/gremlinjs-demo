@@ -35,7 +35,7 @@
     margin-top: 600px;
 }
 
-.sample-gremlins *[data-gremlin-name],
+.sample-gremlins *[data-gremlin],
 .sample-gremlins *[data-gremlin-found] {
     position: relative;
     padding: 10px 20px;
