@@ -47,6 +47,10 @@
 .sample-gremlins *[data-gremlin-found].gremlin-loading {
     background: rgba(0,170,255, 0);
 }
+.sample-gremlins *[data-gremlin-found].gremlin-loading.gremlin-definition-pending,
+.sample-gremlins *[data-gremlin-found].gremlin-error {
+    background: rgba(0,170,255, 0.1);
+}
 .sample-gremlins.lazy-gremlins *[data-gremlin-found].gremlin-ready {
     background: rgba(0,170,255, 0.9);
 }

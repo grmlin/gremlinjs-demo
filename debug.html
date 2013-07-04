@@ -11,7 +11,7 @@
 
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
-<body data-gremlin-debug="true">
+<body data-gremlin-config='{"debug":true}'>
 
 <div class="container">
     <h1 class="page-header">GremlinJS
@@ -32,14 +32,14 @@
         </div>
         <div class="demo-content span9">
             <p class="lead">
-                To create a basic HelloWorld gremlin, include the GremlinJS source and the gremlin definition(s). That's
-                it.
+                GremlinJS comes with a debug mode, to show you gremlins in the page and errors you made.
             </p>
 
             <h3>Sample</h3>
 
             <div class="sample-gremlins" style="padding-top: 20px;">
-                <div data-gremlin="HelloWorld"></div>
+                <div data-gremlin="HelloWorldDebug"></div>
+                <div data-gremlin="ImMissing"></div>
                 <div data-gremlin=""></div>
 
             </div>
@@ -64,11 +64,11 @@
 
             <p></p>
 <pre class="prettyprint linenums">
-GremlinJS.define('HelloWorld', {
-    initialize: function () {
-       this.el.innerHTML = '<strong>Hello World</strong>'
+var HelloWorld = GremlinJS.define('HelloWorld',
+    function () {
+        this.el.innerHTML = '<strong>Hello World</strong>';
     }
-});
+);
 </pre>
 
             <ul>
@@ -79,9 +79,20 @@ GremlinJS.define('HelloWorld', {
                 </li>
                 <li>
                     <p>
-                        The <code>initialize</code> method is the constructor function called when a gremlin with the
-                        name <code>data-gremlin="HelloWorld"</code> was found and initialized.
-                    </p>
+                        The <code>define</code> method takes multiple arguments. In this example two of them are used:
+                    <ol>
+                        <li>
+                            <p>
+                                The gremlin's name
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The constructor function. This function is called when a gremlin with the
+                                name <code>data-gremlin="HelloWorld"</code> was found and instantiated.
+                            </p>
+                        </li>
+                    </ol>
                 </li>
                 <li>
                     <p>
@@ -98,7 +109,7 @@ GremlinJS.define('HelloWorld', {
 
 <script src="js/gremlin.min.js"></script>
 <script src="js/gremlins/Navigation.js"></script>
-<script src="js/gremlins/HelloWorld.js"></script>
+<script src="js/gremlins/HelloWorldDebug.js"></script>
 
 
 </body>
